@@ -1,13 +1,20 @@
 import { PadraoDeVoo } from "../interfaces/padrao-de-voo";
 import { PadraoDeGrasno } from "../interfaces/padrao-de-grasno";
+import { PadraoDeCorrer } from "../interfaces/padrao-de-correr";
 
 export abstract class Pato {
   protected padraoDeVoo: PadraoDeVoo;
   protected padraoDeGrasno: PadraoDeGrasno;
+  protected padraoDeCorrer: PadraoDeCorrer;
 
-  constructor(padraoDeVoo: PadraoDeVoo, padraoDeGrasno: PadraoDeGrasno) {
+  constructor(
+    padraoDeVoo: PadraoDeVoo,
+    padraoDeGrasno: PadraoDeGrasno,
+    padraoDeCorrer: PadraoDeCorrer
+  ) {
     this.padraoDeVoo = padraoDeVoo;
     this.padraoDeGrasno = padraoDeGrasno;
+    this.padraoDeCorrer = padraoDeCorrer;
   }
 
   abstract mostrar(): string;
@@ -26,5 +33,9 @@ export abstract class Pato {
 
   public comportamentoDeGrasno(): string {
     return this.padraoDeGrasno.grasnar();
+  }
+
+  public comportamentoDeCorrer(): string {
+    return this.padraoDeCorrer.correr();
   }
 }

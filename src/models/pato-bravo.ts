@@ -1,11 +1,11 @@
-import { Pato } from "./pato";
-import { PadraoDeGrasno } from "../interfaces/padrao-de-grasno";
-import { VoarAsas } from "../implementations/voar-asas";
+import { Andar } from "../implementations/andar";
 import { Grasnar } from "../implementations/grasnar";
+import { VoarAsas } from "../implementations/voar-asas";
+import { Pato } from "./pato";
 
 export class PatoBravo extends Pato {
   constructor() {
-    super(new VoarAsas(), new Grasnar());
+    super(new VoarAsas(), new Grasnar(), new Andar());
   }
 
   public mostrar(): string {
